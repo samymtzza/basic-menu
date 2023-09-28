@@ -1,0 +1,83 @@
+/* Estilos Generales */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.homepage {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.homepage img {
+    width: 80%;
+    max-width: 300px;
+    margin: 20px 0;
+}
+
+.homepage h2 {
+    color: #333;
+    border-bottom: 2px solid #555;
+    padding-bottom: 10px;
+    margin: 20px 0;
+}
+
+.homepage p {
+    color: #555;
+    font-size: 1em;
+    margin: 10px 0;
+}
+
+.homepage a {
+    display: inline-block; /* Esto permitirá que el enlace tenga el ancho del contenido, no de su contenedor */
+    max-width: 200px;      /* Ajusta a tu necesidad */
+    width: 100%;           /* Toma el ancho total pero respeta el max-width */
+    background-color: #f9a825;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 10px auto;    /* El auto centrará el enlace cuando tiene un width o max-width */
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+
+.homepage a:hover {
+    background-color: #c77800;
+}
+
+/* Responsividad para pantallas medianas (tabletas) */
+@media (min-width: 768px) {
+    .homepage {
+        text-align: center; /* Esto asegura que todo se mantenga centrado */
+    }
+
+    .homepage img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .homepage h2, .homepage p, .homepage a {
+        display: block; /* Esto asegura que los elementos ocupen toda la fila */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .homepage a {
+        margin: 10px auto; /* Ajusta el margen como necesites */
+    }
+}
+
+/* Responsividad para pantallas grandes (escritorios) */
+@media (min-width: 1024px) {
+    .homepage img {
+        margin: 40px auto; /* Esto da más espacio alrededor del logo */
+    }
+
+    .homepage h2, .homepage p, .homepage a {
+        font-size: 1.2em;
+    }
+}
+

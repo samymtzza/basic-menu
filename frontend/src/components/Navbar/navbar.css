@@ -1,0 +1,68 @@
+.navbar {
+    background-color: #ffffff;
+    padding: 2% 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    overflow-x: visible;  /*permite deslizar en caso de que no quepa todo */
+}
+.navbar .logo-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.navbar .sections-container {
+    overflow-x: auto;
+    white-space: nowrap; /*evita que los enlaces salten a la siguiente línea */
+    width: 100%;
+}
+
+.navbar .logo img {
+        width: 200px;  /* Ajusta el tamaño del logo */
+        height: auto;  /* Mantener la relación de aspecto */
+        display: block; 
+        background-size: cover; /* Esto hará que el fondo (si lo hay) cubra el tamaño completo del logo */
+        background-position: center; /* Esto centrará la imagen de fondo */  
+        padding-bottom: 20px;
+}
+
+.navbar .menu {
+    display: flex;
+    gap: 10px; /* Espacio entre cada sección */
+    justify-content: center;
+    width: 100%;
+}
+
+.navbar .menu a {
+    display: inline-block;
+    color: #f9a825;
+    text-decoration: none;
+    font-weight: normal;
+    transition: color 0.3s;
+    margin: 0 15px; /* Ajusta el espacio entre las secciones */
+}
+
+.navbar .menu a:hover {
+    color: #c77800;
+}
+
+.navbar .menu a.active {
+    font-weight: bold;
+    color: #c77800; /* Ajusta el color de la sección activa si lo deseas */
+}
+
+/* Estilos para pantallas grandes */
+@media (min-width: 769px) {
+    .navbar .menu a {
+        font-size: 1.2em;
+        margin: 10px 25px;
+    }
+}
+/* Estilos para pantallas medianas / tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+    .navbar .menu a {
+        font-size: 1.1em;
+        margin: 8px 20px;
+    }
+}

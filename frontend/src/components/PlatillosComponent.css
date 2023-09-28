@@ -1,0 +1,95 @@
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centramos los items */
+    max-width: 600px; /* Ancho máximo de la lista */
+    margin: 0 auto; /* Centrar en pantallas grandes */
+}
+
+li {
+    width: 100%;
+    margin: 10px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil alrededor de cada platillo */
+    overflow: hidden; /* Escondemos el exceso de zoom */
+    transition: transform 0.3s;
+}
+
+li:hover {
+    transform: scale(1.05); /* Ligeramente más grande al pasar el cursor */
+}
+
+li img {
+    width: 100%;
+    height: 150px; 
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+
+li img:hover {
+    transform: scale(1.2); /* Zoom en la imagen */
+}
+
+.platillo-details {
+    padding: 10px;
+    background-color: #f3f3f3; 
+    display: flex;
+    justify-content: space-between;
+}
+
+.platillo-name {
+    font-weight: 600;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.platillo-price {
+    color: #f9a825; 
+    font-weight: bold;
+}
+
+li.no-image {
+    background-color: #f3f3f3; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px; 
+}
+
+li.no-image:before {
+    content: "Imagen no disponible";
+    font-size: 0.9em;
+    color: #bbb;
+}
+
+/* ... tus estilos anteriores ... */
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 480px) {
+    ul {
+        max-width: 350px; /* Ajustamos el ancho máximo para que ocupe todo el espacio disponible en móviles */
+        padding: 0 10px; /* Un pequeño padding lateral para no pegar los elementos a los bordes */
+    }
+
+    li img {
+        height: 100px; /* Ajustamos el alto de las imágenes para móviles */
+    }
+
+    .platillo-details {
+        flex-direction: column; /* Cambiamos la dirección para que nombre y precio estén en líneas separadas */
+        align-items: center; /* Centramos los elementos */
+    }
+
+    .platillo-name, .platillo-price {
+        margin: 4px 0; /* Espaciado vertical entre nombre y precio */
+    }
+
+    li.no-image {
+        height: 100px; /* Ajustamos el alto para los platillos sin imagen en móviles */
+    }
+}
+
+
+
+
