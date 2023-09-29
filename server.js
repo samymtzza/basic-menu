@@ -8,11 +8,24 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const { verifyToken } = require('./middleware');
 const app = express();
-
-app.use(cors({ origin: 'http://localhost:3000' }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/uploads', express.static('uploads'));
+app.use(express.static('public'))
+app.use('uploads', express.static('uploads'));
+
+const whitelist = ['http://safireweb.com', 'https://safireweb.com'];  // Añade 'https' si tienes SSL activo.
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      callback(null, true)
+    } else {
+      callback(new Error('No permitido por CORS'))
+    }
+  }
+}
+app.use(cors(corsOptions));
+
+
 
 const users = [
     {
@@ -162,8 +175,4 @@ app.use((err, req, res, next) => {
 });
 
 
-const PORT = 5001;
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-});
 
